@@ -54,7 +54,7 @@ const Pricing = () => {
   ]
 
   return (
-    <div className="pt-[70px]">
+    <div className="page-shell">
       {/* Header */}
       <section className="section-padding bg-dark-section">
         <div className="container-custom text-center">
@@ -62,9 +62,9 @@ const Pricing = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <h2 className="text-gold uppercase tracking-widest text-sm mb-4">Investment</h2>
-            <h1 className="font-display text-5xl md:text-6xl text-white mb-6">Pricing Plans</h1>
-            <p className="text-text-secondary text-lg max-w-2xl mx-auto">
+            <h2 className="section-kicker mb-4">Investment</h2>
+            <h1 className="section-title text-white mb-6">Pricing Plans</h1>
+            <p className="text-text-secondary text-sm md:text-lg max-w-2xl mx-auto">
               Transparent pricing for exceptional photography services. Choose the plan that fits your needs.
             </p>
           </motion.div>
@@ -74,7 +74,7 @@ const Pricing = () => {
       {/* Pricing Cards */}
       <section className="section-padding bg-dark-bg">
         <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 md:gap-7 max-w-6xl mx-auto">
             {plans.map((plan, index) => (
               <motion.div
                 key={plan.name}
@@ -83,7 +83,7 @@ const Pricing = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ y: -10 }}
-                className={`relative rounded-2xl p-8 ${
+                className={`relative rounded-2xl p-8 interactive-lift ${
                   plan.popular 
                     ? 'bg-dark-card border-2 border-gold shadow-2xl shadow-gold/20' 
                     : 'bg-dark-card border border-dark-border'
@@ -163,7 +163,7 @@ const Pricing = () => {
                 { title: "High Resolution", desc: "Print-ready digital files" },
                 { title: "Online Gallery", desc: "Easy sharing and downloading" }
               ].map((item) => (
-                <div key={item.title} className="bg-dark-bg p-6 rounded-lg">
+                <div key={item.title} className="bg-dark-bg p-6 rounded-lg border border-dark-border interactive-lift">
                   <h4 className="text-gold font-semibold mb-2">{item.title}</h4>
                   <p className="text-text-secondary text-sm">{item.desc}</p>
                 </div>

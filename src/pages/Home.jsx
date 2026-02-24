@@ -46,31 +46,31 @@ const services = [
     title: 'Portrait Photography',
     description: 'Timeless portraits that capture your essence with sophistication and artistic vision.',
     price: 'From $500',
-    image: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=600',
+    image: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900',
   },
   {
     icon: Heart,
     title: 'Wedding Photography',
     description: 'Documenting your special day with elegance, emotion, and attention to every precious detail.',
     price: 'From $2,500',
-    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600',
+    image: 'https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=900',
   },
   {
     icon: Award,
     title: 'Commercial Shoots',
     description: 'High-end commercial photography that elevates your brand and captivates your audience.',
     price: 'From $1,500',
-    image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=600',
+    image: 'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=900',
   },
 ]
 
 const portfolioItems = [
-  { id: 1, category: 'Portrait', title: 'Elegant Portrait', image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600' },
-  { id: 2, category: 'Wedding', title: 'Luxury Wedding', image: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=600' },
-  { id: 3, category: 'Commercial', title: 'Brand Campaign', image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=600' },
-  { id: 4, category: 'Fashion', title: 'Editorial Shoot', image: 'https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=600' },
-  { id: 5, category: 'Event', title: 'Gala Night', image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600' },
-  { id: 6, category: 'Portrait', title: 'Corporate Headshot', image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600' },
+  { id: 1, category: 'Portrait', title: 'Elegant Portrait', image: 'https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=900' },
+  { id: 2, category: 'Wedding', title: 'Luxury Wedding', image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900' },
+  { id: 3, category: 'Commercial', title: 'Brand Campaign', image: 'https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=900' },
+  { id: 4, category: 'Fashion', title: 'Editorial Shoot', image: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=900' },
+  { id: 5, category: 'Event', title: 'Gala Night', image: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=900' },
+  { id: 6, category: 'Portrait', title: 'Corporate Headshot', image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=900' },
 ]
 
 const testimonials = [
@@ -119,28 +119,28 @@ const Home = () => {
   }, [testimonials.length])
 
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden page-shell pt-0">
       {/* Hero Section */}
-      <section ref={heroRef} className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
+      <section ref={heroRef} className="relative h-screen min-h-[640px] md:min-h-[700px] flex items-center justify-center overflow-hidden">
         <motion.div 
           style={{ y, opacity }} 
           className="absolute inset-0 z-0"
         >
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-110"
-            style={{ backgroundImage: "url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=2000')" }}
+            style={{ backgroundImage: "url('https://images.unsplash.com/photo-1452587925148-ce544e77e70d?auto=format&fit=crop&w=2200')" }}
           />
           {/* Fixed: Using explicit hex colors instead of custom color name */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-[#0F0F0F]" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/30" />
         </motion.div>
 
-        <div className="relative z-10 container-custom text-center px-4">
+        <div className="relative z-10 container-custom text-center px-4 pt-10">
           <motion.span
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="inline-block text-[#D4AF37] uppercase tracking-[0.4em] text-xs md:text-sm mb-6 font-semibold border border-[#D4AF37]/30 px-4 py-2 rounded-full"
+            className="inline-block text-[#D4AF37] uppercase tracking-[0.32em] text-[10px] md:text-xs mb-6 font-semibold border border-[#D4AF37]/30 px-4 py-2 rounded-full"
           >
             Premium Photography Studio
           </motion.span>
@@ -149,7 +149,7 @@ const Home = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="font-['Playfair_Display'] text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-[1.1]"
+            className="font-['Playfair_Display'] text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-[1.05]"
           >
             Capturing Moments
             <br />
@@ -160,7 +160,7 @@ const Home = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-[#B3B3B3] text-base md:text-lg lg:text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
+            className="text-[#B3B3B3] text-sm md:text-lg lg:text-xl max-w-2xl mx-auto mb-9 leading-relaxed"
           >
             Luxury photography services for those who appreciate artistry, sophistication, and timeless elegance in every frame.
           </motion.p>
@@ -169,11 +169,11 @@ const Home = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center"
           >
             <Link to="/portfolio">
               <motion.button 
-                className="btn-primary flex items-center gap-3 group px-10" 
+                className="btn-primary flex items-center justify-center gap-3 group px-8 w-[220px] sm:w-auto" 
                 whileHover={{ scale: 1.05 }} 
                 whileTap={{ scale: 0.95 }}
               >
@@ -183,7 +183,7 @@ const Home = () => {
             </Link>
             <Link to="/booking">
               <motion.button 
-                className="btn-outline" 
+                className="btn-outline w-[220px] sm:w-auto" 
                 whileHover={{ scale: 1.05 }} 
                 whileTap={{ scale: 0.95 }}
               >
@@ -197,7 +197,7 @@ const Home = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2"
+          className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2"
         >
           <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
             <motion.div
@@ -217,16 +217,16 @@ const Home = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16 md:mb-20"
+            className="text-center mb-12 md:mb-20"
           >
             <span className="text-[#D4AF37] uppercase tracking-[0.3em] text-xs font-semibold mb-4 block">Our Services</span>
-            <h2 className="font-['Playfair_Display'] text-3xl md:text-5xl lg:text-6xl text-white mb-6">Premium Photography</h2>
+            <h2 className="font-['Playfair_Display'] text-3xl md:text-5xl lg:text-6xl text-white mb-5">Premium Photography</h2>
             <p className="text-[#B3B3B3] max-w-2xl mx-auto text-sm md:text-base">
               Tailored photography experiences designed to capture your most precious moments with sophistication and artistry.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5 md:gap-7">
             {services.map((service, index) => (
               <motion.div
                 key={service.title}
@@ -235,23 +235,23 @@ const Home = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.15 }}
                 whileHover={{ y: -10 }}
-                className="group relative bg-[#1A1A1A] border border-[#2A2A2A] rounded-2xl overflow-hidden"
+                className="group relative bg-[#1A1A1A] border border-[#2A2A2A] rounded-2xl overflow-hidden h-full interactive-lift"
               >
                 <div className="aspect-[4/3] overflow-hidden relative">
                   <ImageWithFallback 
                     src={service.image} 
                     alt={service.title} 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                    className="w-full h-full object-cover hover-zoom-soft" 
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-[#1A1A1A]/50 to-transparent" />
                 </div>
-                <div className="p-6 md:p-8 relative">
+                <div className="p-5 md:p-7 relative h-full flex flex-col">
                   <div className="w-14 h-14 rounded-xl bg-[#D4AF37]/10 flex items-center justify-center mb-5 group-hover:bg-[#D4AF37]/20 transition-colors">
                     <service.icon className="w-7 h-7 text-[#D4AF37]" />
                   </div>
                   <h3 className="font-['Playfair_Display'] text-xl md:text-2xl text-white mb-3">{service.title}</h3>
-                  <p className="text-[#B3B3B3] text-sm mb-5 leading-relaxed">{service.description}</p>
-                  <div className="flex items-center justify-between">
+                  <p className="text-[#B3B3B3] text-sm mb-5 leading-relaxed flex-grow">{service.description}</p>
+                  <div className="flex items-center justify-between pt-2">
                     <span className="text-[#D4AF37] font-semibold text-lg">{service.price}</span>
                     <Link to="/booking">
                       <motion.button 
@@ -278,7 +278,7 @@ const Home = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="text-center mb-12 md:mb-16"
           >
             <span className="text-[#D4AF37] uppercase tracking-[0.3em] text-xs font-semibold mb-4 block">Portfolio</span>
             <h2 className="font-['Playfair_Display'] text-3xl md:text-5xl lg:text-6xl text-white mb-6">Recent Work</h2>
@@ -292,7 +292,8 @@ const Home = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`group relative overflow-hidden rounded-xl cursor-pointer ${
+                whileHover={{ y: -10 }}
+                className={`group relative overflow-hidden rounded-xl cursor-pointer min-h-[240px] interactive-lift ${
                   index === 0 ? 'sm:col-span-2 lg:col-span-2 lg:row-span-2' : ''
                 }`}
               >
@@ -304,9 +305,9 @@ const Home = () => {
                   <ImageWithFallback 
                     src={item.image} 
                     alt={item.title} 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                    className="w-full h-full object-cover hover-zoom-soft" 
                   />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition-all duration-500" />
+                  <div className="absolute inset-0 bg-black/15 group-hover:bg-black/60 transition-all duration-500" />
                   <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 p-6">
                     <span className="text-[#D4AF37] uppercase tracking-[0.3em] text-xs mb-2">{item.category}</span>
                     <h4 className="font-['Playfair_Display'] text-2xl md:text-3xl text-white text-center">{item.title}</h4>
@@ -338,7 +339,7 @@ const Home = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="text-center mb-12 md:mb-16"
           >
             <span className="text-[#D4AF37] uppercase tracking-[0.3em] text-xs font-semibold mb-4 block">Testimonials</span>
             <h2 className="font-['Playfair_Display'] text-3xl md:text-5xl lg:text-6xl text-white">Client Reviews</h2>
@@ -353,14 +354,14 @@ const Home = () => {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -100 }}
                   transition={{ duration: 0.5 }}
-                  className="bg-[#1A1A1A] border border-[#2A2A2A] rounded-2xl p-8 md:p-12 text-center"
+                  className="bg-[#1A1A1A] border border-[#2A2A2A] rounded-2xl p-6 md:p-12 text-center interactive-lift"
                 >
                   <div className="flex justify-center gap-1 mb-6">
                     {[...Array(testimonials[currentTestimonial]?.rating || 0)].map((_, i) => (
                       <Star key={i} className="w-5 h-5 fill-[#D4AF37] text-[#D4AF37]" />
                     ))}
                   </div>
-                  <p className="text-white text-lg md:text-xl lg:text-2xl font-['Playfair_Display'] italic leading-relaxed mb-8">
+                  <p className="text-white text-base md:text-xl lg:text-2xl font-['Playfair_Display'] italic leading-relaxed mb-8">
                     "{testimonials[currentTestimonial]?.content}"
                   </p>
                   <div className="flex items-center justify-center gap-4">
@@ -402,7 +403,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-20 md:py-32 overflow-hidden">
+      <section className="relative py-16 md:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-[#D4AF37] via-[#C19B2E] to-[#D4AF37]" />
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10" />
 
@@ -413,11 +414,11 @@ const Home = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="font-['Playfair_Display'] text-3xl md:text-5xl lg:text-6xl text-black mb-6">
+            <h3 className="font-['Playfair_Display'] text-3xl md:text-5xl lg:text-6xl text-black mb-5">
               Ready to Create Something
               <br className="hidden md:block" /> Beautiful?
             </h3>
-            <p className="text-black/70 text-base md:text-lg max-w-2xl mx-auto mb-10">
+            <p className="text-black/70 text-sm md:text-lg max-w-2xl mx-auto mb-8 md:mb-10">
               Book your session today and let us capture your story with elegance, artistry, and timeless sophistication.
             </p>
             <Link to="/booking">

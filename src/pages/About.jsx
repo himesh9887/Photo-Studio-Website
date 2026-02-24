@@ -1,149 +1,162 @@
 import { motion } from 'framer-motion'
-import { Award, Users, Camera, Heart } from 'lucide-react'
+import { Award, Users, Camera, Heart, Sparkles, ShieldCheck, Clock3 } from 'lucide-react'
+
+const teamMembers = [
+  { name: 'Alexander Chen', role: 'Founder & Lead Photographer', img: 'https://images.unsplash.com/photo-1474176857210-7287d38d27c6?auto=format&fit=crop&w=700' },
+  { name: 'Sophie Williams', role: 'Creative Director', img: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=700' },
+  { name: 'Marcus Johnson', role: 'Senior Photographer', img: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=700' },
+]
+
+const values = [
+  { icon: Sparkles, title: 'Art Direction', text: 'Har shoot me cinematic framing aur polished visual storytelling maintain karte hain.' },
+  { icon: ShieldCheck, title: 'Reliable Process', text: 'Pre-shoot planning, timeline discipline aur clear communication se smooth delivery hoti hai.' },
+  { icon: Clock3, title: 'Fast Delivery', text: 'Optimized editing workflow ke saath premium output committed timeline me deliver hota hai.' },
+]
+
+const stats = [
+  { icon: Camera, value: '10+', label: 'Years Experience' },
+  { icon: Users, value: '500+', label: 'Happy Clients' },
+  { icon: Award, value: '50+', label: 'Awards Won' },
+  { icon: Heart, value: '1000+', label: 'Projects Done' },
+]
 
 const About = () => {
-  const stats = [
-    { icon: Camera, value: "10+", label: "Years Experience" },
-    { icon: Users, value: "500+", label: "Happy Clients" },
-    { icon: Award, value: "50+", label: "Awards Won" },
-    { icon: Heart, value: "1000+", label: "Projects Done" },
-  ]
-
   return (
-    <div className="pt-[70px]">
-      {/* Hero */}
-      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-        <div 
+    <div className="page-shell">
+      <section className="relative min-h-[52vh] md:min-h-[62vh] flex items-center overflow-hidden">
+        <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1554048612-387768052bf7?auto=format&fit=crop&w=2000')`,
-          }}
+          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1525130413817-d45c1d127c42?auto=format&fit=crop&w=2200')" }}
         />
-        <div className="absolute inset-0 bg-black/60" />
-        
-        <div className="relative z-10 container-custom text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-black/65" />
+        <div className="container-custom relative z-10 py-20 md:py-28">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="font-display text-5xl md:text-7xl text-white mb-4"
+            className="section-kicker mb-4"
           >
-            About Us
+            About Luxe Lens
+          </motion.p>
+          <motion.h1
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="section-title text-white max-w-2xl"
+          >
+            Passionate Team Behind Timeless Photography
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-text-secondary text-xl"
+            className="text-text-secondary mt-5 max-w-xl text-sm md:text-base"
           >
-            Passionate about capturing life's beautiful moments
+            Hum log moments sirf capture nahi karte, unhe elegant visual memory me transform karte hain.
           </motion.p>
         </div>
       </section>
 
-      {/* Story Section */}
       <section className="section-padding bg-dark-bg">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="text-gold uppercase tracking-widest text-sm mb-4">Our Story</h2>
-              <h3 className="font-display text-4xl text-white mb-6">A Decade of Excellence</h3>
-              <p className="text-text-secondary leading-relaxed mb-6">
-                Founded in 2014, Luxe Lens Studio has grown from a small passion project into one of the most sought-after photography studios in the city. Our journey began with a simple belief: that every moment deserves to be captured with artistry and elegance.
-              </p>
-              <p className="text-text-secondary leading-relaxed mb-6">
-                Over the years, we've had the privilege of documenting thousands of stories – from intimate weddings to grand corporate events, from personal portraits to high-fashion editorials. Each project is approached with the same dedication to excellence and attention to detail.
-              </p>
-              <p className="text-text-secondary leading-relaxed">
-                Today, our team of talented photographers and creative professionals continues to push the boundaries of visual storytelling, combining technical expertise with artistic vision to create images that truly resonate.
-              </p>
-            </motion.div>
+        <div className="container-custom grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="lg:col-span-7"
+          >
+            <p className="section-kicker mb-4">Our Story</p>
+            <h2 className="font-display text-3xl md:text-5xl text-white mb-5">A Decade of Creative Excellence</h2>
+            <p className="text-text-secondary mb-4 text-sm md:text-base">
+              Founded in 2014, Luxe Lens ek passion project tha jo aaj premium studio experience me evolve ho chuka hai. Har project ko hum visual quality, emotion aur detail-first mindset ke saath handle karte hain.
+            </p>
+            <p className="text-text-secondary mb-4 text-sm md:text-base">
+              Weddings se fashion editorials tak, corporate campaigns se personal portraits tak, team ka focus ek hi rehta hai: client ki story ko refined aur memorable imagery me convert karna.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-7">
+              {values.map((value) => (
+                <div key={value.title} className="card-dark">
+                  <value.icon className="w-6 h-6 text-gold mb-3" />
+                  <h3 className="text-white font-semibold mb-2">{value.title}</h3>
+                  <p className="text-text-secondary text-sm">{value.text}</p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="relative"
-            >
-              <div className="aspect-[4/5] rounded-lg overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=800"
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="lg:col-span-5"
+          >
+            <div className="relative">
+              <div className="aspect-[4/5] rounded-2xl overflow-hidden border border-dark-border interactive-lift">
+                <img
+                  src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1000"
                   alt="Photographer at work"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover hover-zoom-soft"
                 />
               </div>
-              <div className="absolute -bottom-6 -left-6 w-48 h-48 border-2 border-gold rounded-lg -z-10" />
-            </motion.div>
-          </div>
+              <div className="hidden md:block absolute -bottom-6 -left-6 w-36 h-36 rounded-2xl border border-gold/60" />
+            </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Stats */}
       <section className="section-padding bg-dark-section">
         <div className="container-custom">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="text-center"
+                transition={{ delay: index * 0.08 }}
+                className="card-dark text-center"
               >
-                <div className="w-16 h-16 mx-auto rounded-full bg-gold/10 flex items-center justify-center mb-4">
-                  <stat.icon className="w-8 h-8 text-gold" />
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-gold/10 mx-auto flex items-center justify-center mb-4">
+                  <stat.icon className="w-6 h-6 text-gold" />
                 </div>
-                <h4 className="font-display text-4xl text-gold mb-2">{stat.value}</h4>
-                <p className="text-text-secondary">{stat.label}</p>
+                <p className="font-display text-2xl md:text-4xl text-gold leading-none">{stat.value}</p>
+                <p className="text-text-secondary text-xs md:text-sm mt-2">{stat.label}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Team */}
       <section className="section-padding bg-dark-bg">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12 md:mb-16"
           >
-            <h2 className="text-gold uppercase tracking-widest text-sm mb-4">Our Team</h2>
-            <h3 className="font-display text-4xl text-white">Meet the Artists</h3>
+            <p className="section-kicker mb-4">Meet The Team</p>
+            <h2 className="font-display text-3xl md:text-5xl text-white">Artists Behind The Lens</h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { name: "Alexander Chen", role: "Founder & Lead Photographer", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400" },
-              { name: "Sophie Williams", role: "Creative Director", img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400" },
-              { name: "Marcus Johnson", role: "Senior Photographer", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400" },
-            ].map((member, index) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {teamMembers.map((member, index) => (
               <motion.div
                 key={member.name}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group text-center"
+                transition={{ delay: index * 0.1 }}
+                className="group card-dark text-center interactive-lift"
               >
-                <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden">
-                  <img 
+                <div className="aspect-square max-w-[220px] mx-auto rounded-full overflow-hidden border border-dark-border mb-5">
+                  <img
                     src={member.img}
                     alt={member.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-full object-cover hover-zoom-soft"
                   />
-                  <div className="absolute inset-0 bg-gold/0 group-hover:bg-gold/20 transition-colors duration-300" />
                 </div>
-                <h4 className="font-display text-xl text-white mb-1">{member.name}</h4>
-                <p className="text-gold text-sm">{member.role}</p>
+                <h3 className="font-display text-xl text-white">{member.name}</h3>
+                <p className="text-gold text-sm mt-1">{member.role}</p>
               </motion.div>
             ))}
           </div>

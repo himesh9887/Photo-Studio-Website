@@ -40,7 +40,7 @@ const Contact = () => {
   ]
 
   return (
-    <div className="pt-[70px]">
+    <div className="page-shell">
       {/* Header */}
       <section className="section-padding bg-dark-section">
         <div className="container-custom text-center">
@@ -48,9 +48,9 @@ const Contact = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <h2 className="text-gold uppercase tracking-widest text-sm mb-4">Get in Touch</h2>
-            <h1 className="font-display text-5xl md:text-6xl text-white mb-6">Contact Us</h1>
-            <p className="text-text-secondary text-lg max-w-2xl mx-auto">
+            <h2 className="section-kicker mb-4">Get in Touch</h2>
+            <h1 className="section-title text-white mb-6">Contact Us</h1>
+            <p className="text-text-secondary text-sm md:text-lg max-w-2xl mx-auto">
               Have a question or ready to book? We'd love to hear from you.
             </p>
           </motion.div>
@@ -60,7 +60,7 @@ const Contact = () => {
       {/* Contact Section */}
       <section className="section-padding bg-dark-bg">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
             {/* Contact Form */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -133,7 +133,7 @@ const Contact = () => {
               transition={{ duration: 0.6 }}
             >
               <h3 className="font-display text-2xl text-white mb-6">Contact Information</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 mb-8">
                 {contactInfo.map((info, index) => (
                   <motion.div
                     key={info.title}

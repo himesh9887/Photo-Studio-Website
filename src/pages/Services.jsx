@@ -55,7 +55,7 @@ const Services = () => {
   ]
 
   return (
-    <div className="pt-[70px]">
+    <div className="page-shell">
       {/* Header */}
       <section className="section-padding bg-dark-section">
         <div className="container-custom text-center">
@@ -63,9 +63,9 @@ const Services = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <h2 className="text-gold uppercase tracking-widest text-sm mb-4">What We Offer</h2>
-            <h1 className="font-display text-5xl md:text-6xl text-white mb-6">Our Services</h1>
-            <p className="text-text-secondary text-lg max-w-2xl mx-auto">
+            <h2 className="section-kicker mb-4">What We Offer</h2>
+            <h1 className="section-title text-white mb-6">Our Services</h1>
+            <p className="text-text-secondary text-sm md:text-lg max-w-2xl mx-auto">
               Tailored photography packages designed to meet your specific needs and exceed your expectations
             </p>
           </motion.div>
@@ -75,7 +75,7 @@ const Services = () => {
       {/* Services Grid */}
       <section className="section-padding bg-dark-bg">
         <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5 md:gap-7">
             {services.map((service, index) => (
               <motion.div
                 key={service.title}

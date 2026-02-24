@@ -2,10 +2,9 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-import ScrollToTop from './components/ScrollToTop' // ✅ Critical import
+import ScrollToTop from './components/ScrollToTop'
 import PageTransition from './components/PageTransition'
 
-// Pages
 import Home from './pages/Home'
 import About from './pages/About'
 import Services from './pages/Services'
@@ -19,39 +18,21 @@ function App() {
 
   return (
     <div className="min-h-screen bg-dark-bg text-white dark">
-      {/* ✅ CRITICAL: ScrollToTop component - resets scroll on route change */}
       <ScrollToTop />
-      
       <Navbar />
-      
-      <main>
+      <main className="animate-page-enter">
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
-            <Route path="/" element={
-              <PageTransition><Home /></PageTransition>
-            } />
-            <Route path="/about" element={
-              <PageTransition><About /></PageTransition>
-            } />
-            <Route path="/services" element={
-              <PageTransition><Services /></PageTransition>
-            } />
-            <Route path="/portfolio" element={
-              <PageTransition><Portfolio /></PageTransition>
-            } />
-            <Route path="/pricing" element={
-              <PageTransition><Pricing /></PageTransition>
-            } />
-            <Route path="/booking" element={
-              <PageTransition><Booking /></PageTransition>
-            } />
-            <Route path="/contact" element={
-              <PageTransition><Contact /></PageTransition>
-            } />
+            <Route path="/" element={<PageTransition><Home /></PageTransition>} />
+            <Route path="/about" element={<PageTransition><About /></PageTransition>} />
+            <Route path="/services" element={<PageTransition><Services /></PageTransition>} />
+            <Route path="/portfolio" element={<PageTransition><Portfolio /></PageTransition>} />
+            <Route path="/pricing" element={<PageTransition><Pricing /></PageTransition>} />
+            <Route path="/booking" element={<PageTransition><Booking /></PageTransition>} />
+            <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
           </Routes>
         </AnimatePresence>
       </main>
-      
       <Footer />
     </div>
   )

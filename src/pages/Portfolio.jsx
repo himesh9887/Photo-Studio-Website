@@ -25,7 +25,7 @@ const Portfolio = () => {
     : portfolioItems.filter(item => item.category === filter)
 
   return (
-    <div className="pt-[70px]">
+    <div className="page-shell">
       {/* Header */}
       <section className="section-padding bg-dark-section">
         <div className="container-custom text-center">
@@ -33,9 +33,9 @@ const Portfolio = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <h2 className="text-gold uppercase tracking-widest text-sm mb-4">Our Work</h2>
-            <h1 className="font-display text-5xl md:text-6xl text-white mb-6">Portfolio</h1>
-            <p className="text-text-secondary text-lg max-w-2xl mx-auto">
+            <h2 className="section-kicker mb-4">Our Work</h2>
+            <h1 className="section-title text-white mb-6">Portfolio</h1>
+            <p className="text-text-secondary text-sm md:text-lg max-w-2xl mx-auto">
               A curated selection of our finest work across various photography genres
             </p>
           </motion.div>
@@ -45,12 +45,12 @@ const Portfolio = () => {
       {/* Filter Buttons */}
       <section className="py-8 bg-dark-bg border-b border-dark-border">
         <div className="container-custom">
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-3 md:gap-4">
             {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => setFilter(category)}
-                className={`px-6 py-2 rounded-full text-sm uppercase tracking-wider transition-all duration-300 ${
+                className={`px-4 md:px-6 py-2 rounded-full text-xs md:text-sm uppercase tracking-wider transition-all duration-300 ${
                   filter === category
                     ? 'bg-gold text-black'
                     : 'border border-gold text-gold hover:bg-gold hover:text-black'
@@ -68,7 +68,7 @@ const Portfolio = () => {
         <div className="container-custom">
           <motion.div 
             layout
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6"
           >
             <AnimatePresence>
               {filteredItems.map((item) => (
@@ -79,7 +79,7 @@ const Portfolio = () => {
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.3 }}
                   key={item.id}
-                  className="group relative aspect-[4/3] overflow-hidden rounded-lg cursor-pointer"
+                  className="group relative aspect-[4/3] overflow-hidden rounded-lg cursor-pointer interactive-lift"
                   onClick={() => setSelectedImage(item)}
                 >
                   <img 
